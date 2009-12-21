@@ -16,5 +16,5 @@ void
 Init_iseq_ext()
 {
 	// Load method is commented out in iseq.c
-	rb_define_singleton_method(rb_cISeq, "load2", iseq_s_load, -1);
+	rb_define_singleton_method(rb_cISeq, "load_array", iseq_s_load, -1);
 }

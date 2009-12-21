@@ -2,19 +2,25 @@ require "iseq_ext"
 
 module Rbyte
   module KernelMethods
-    def self.included()
-      alias :require_without_rbyte, :require
-      alias :require, :require_with_rbyte
+    def self.included(base)
+      base.class_eval do
+        alias :require_without_rbyte, :require
+        alias :require, :require_with_rbyte
+      end
     end
   
     def require_with_rbyte(path)
-      # Alias...
+      # Search load path for files with extensions .rbc
+      # Find corresponding .rb file (if it exists) 
+      # Compare mtimes. If the .rpc file is up to date, 
+      # eval it and add to 'loaded_feature'.
+      # Otherwise, normal require.
     end
   end
   
   def decompile_file(path)
     res = Marshall.load(File.read(path))
-    RubyVM::InstructionSequence.load2(res).eval
+    RubyVM::InstructionSequence.load_array(res).eval
   end
   module_function :decompile_file
   
