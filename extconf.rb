@@ -1,2 +1,2 @@
 require "mkmf"
-create_makefile("rbyte")
+create_makefile("iseq_ext")
