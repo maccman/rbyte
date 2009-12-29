@@ -1,1 +1,21 @@
-In development
+Ruby byte code library.
+
+Not for production use just yet, since Ruby's byte compiling
+supports a limit subset of Ruby files. Anything that isn't wrapped in a class doesn't seem to work. These bugs are 
+fixed in Ruby's trunk.
+
+Requires Ruby 1.9.1
+
+Setup:
+  ruby extconf.rb
+  make
+
+Usage:
+  Rbyte.compile_file(path)
+  Rbyte.decompile_file(path)
+  
+  # To make RBC files automatically be required
+  Kernel.send(:include, Rbyte::RequirePatch)
+  require "my_rbc_file"
+  
+  
