@@ -1,14 +1,10 @@
 Ruby byte code library.
 
-Not for production use just yet, since Ruby's byte compiling
-supports a limit subset of Ruby files. Anything that isn't wrapped in a class doesn't seem to work. These bugs are 
-fixed in Ruby's trunk.
+There are a few major bugs with byte encoding in Ruby 1.9.1 so,
+to use this library, you need to use Ruby's trunk.
 
-Requires Ruby 1.9.1
-
-Setup:
-  ruby extconf.rb
-  make
+Installation:
+  sudo gem install rbyte
 
 Usage:
   Rbyte.compile_file(path)
