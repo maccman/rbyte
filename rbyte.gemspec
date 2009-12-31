@@ -19,7 +19,12 @@ Gem::Specification.new do |s|
   s.files = [
     ".gitignore",
      "README",
-     "VERSION"
+     "Rakefile",
+     "VERSION",
+     "ext/extconf.rb",
+     "ext/iseq_ext.c",
+     "lib/rbyte.rb",
+     "rbyte.gemspec"
   ]
   s.homepage = %q{http://github.com/maccman/rbyte}
   s.rdoc_options = ["--charset=UTF-8"]
